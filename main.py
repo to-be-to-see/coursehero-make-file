@@ -32,11 +32,11 @@ enter_btn = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2
 for count in range(int(loop_count)):
     input_box.clear()
     if subject_choice == 1:
-        input_box.send_keys("Make" +doc_types[random.randint(0, len(doc_types)-1)]+ "about "+random.choice(physics_topics))
+        input_box.send_keys("Make " +doc_types[random.randint(0, len(doc_types)-1)]+ " about "+random.choice(physics_topics))
     if subject_choice == 2:
-        input_box.send_keys("Make" +doc_types[random.randint(0, len(doc_types)-1)]+ "about "+random.choice(chemistry_topics))
+        input_box.send_keys("Make " +doc_types[random.randint(0, len(doc_types)-1)]+ " about "+random.choice(chemistry_topics))
     else:
-        input_box.send_keys("Make" +doc_types[random.randint(0, len(doc_types)-1)]+ "about "+random.choice(biology_topics))
+        input_box.send_keys("Make " +doc_types[random.randint(0, len(doc_types)-1)]+ " about "+random.choice(biology_topics))
 
     enter_btn.click()
     text_generated = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2]/div[2]/div[2]/div/pre').text
