@@ -27,7 +27,7 @@ options.add_argument("--headless=new")
 
 driver = webdriver.Chrome(options=options)
 driver.get('https://askyourpdf.com/tools/text-generator/generate')
-driver.implicitly_wait(30)
+driver.implicitly_wait(60)
 
 input_box = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2]/div[1]/div/div[1]/textarea')
 enter_btn = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2]/div[1]/div/button')
