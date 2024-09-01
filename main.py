@@ -19,7 +19,7 @@ loop_count = input('Loop count  ')
 options = Options()
 options.add_argument("--start-maximized")            # Window maximized to load login btn in home page
 options.add_argument("--disable-popup-blocking")
-#options.add_argument("--headless=new")
+options.add_argument("--headless=new")
 
 driver = webdriver.Chrome(options=options)
 driver.get('https://askyourpdf.com/tools/text-generator/generate')
