@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-desktop_path = "C:/input your path/Desktop/"
+desktop_path = "C:/Users/wuyib/Desktop/"
 
 doc_types = ['short quiz', 'notes', 'worksheet','multiple choice questions', 'short questions', 'structural questions', 'fill in the blanks', 'matching questions', 'Essay-type questions']
 
@@ -58,7 +58,7 @@ while 1:
     except:
         count -= 1
         continue
-        
+
     document = Document()
     document.add_paragraph(text_generated)
     document.save(desktop_path + 'word/' + str(count) + '.docx')
