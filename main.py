@@ -40,7 +40,6 @@ for count in range(int(loop_count)):
         input_box.send_keys(input_text1 + random.choice(maths_topics) + input_text2)
     enter_btn.click()
     text_generated = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2]/div[2]/div[2]/div/pre').text
-    print(text_generated)
     document = Document()
     document.add_paragraph(text_generated)
     document.save(desktop_path + 'word/' + str(count) + '.docx')
