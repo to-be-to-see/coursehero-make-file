@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-desktop_path = "C:/Users/wuyib/Desktop/"
+desktop_path = "C:/input your path/Desktop/"
 
 doc_types = ['short quiz', 'notes', 'worksheet','multiple choice questions', 'short questions', 'structural questions', 'fill in the blanks', 'matching questions', 'Essay-type questions']
 
@@ -32,10 +32,14 @@ driver.implicitly_wait(60)
 input_box = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2]/div[1]/div/div[1]/textarea')
 enter_btn = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2]/div[1]/div/button')
 
-for count in range(int(loop_count)):
+count = 0
+while 1:
+    count += 1
+    if count >= int(loop_count):
+        break
     input_box.clear()
     input_text1, input_text2= 'Introduce another concept in ', '. Make ' + doc_types[random.randint(0, len(doc_types)-1)] + ' about it'
-    
+
     if subject_choice == '1':
         input_box.send_keys(input_text1 + random.choice(physics_topics) + input_text2)
     if subject_choice == '2':
@@ -48,9 +52,13 @@ for count in range(int(loop_count)):
         input_box.send_keys(input_text1 + random.choice(economic_topics) + input_text2)
     if subject_choice == '6':
         input_box.send_keys(input_text1 + random.choice(geology_topics) + input_text2)
+    try:
+        enter_btn.click()
+        text_generated = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2]/div[2]/div[2]/div/pre').text
+    except:
+        count -= 1
+        continue
         
-    enter_btn.click()
-    text_generated = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2]/div[2]/div[2]/div/pre').text
     document = Document()
     document.add_paragraph(text_generated)
     document.save(desktop_path + 'word/' + str(count) + '.docx')
