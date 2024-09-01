@@ -35,7 +35,7 @@ enter_btn = driver.find_element(By.XPATH, value='//*[@id="__next"]/section/div[2
 count = 0
 while 1:
     count += 1
-    if count >= int(loop_count):
+    if count > int(loop_count):
         break
     input_box.clear()
     input_text1, input_text2= 'Introduce another concept in ', '. Make ' + doc_types[random.randint(0, len(doc_types)-1)] + ' about it'
