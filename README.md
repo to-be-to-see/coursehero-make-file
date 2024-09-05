@@ -1,3 +1,4 @@
+# This is a toy project. Do not expect any maintance 
 # How to use
 1. Move .exe file to desktop
 2. Click to run
