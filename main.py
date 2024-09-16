@@ -5,7 +5,7 @@ from selenium.webdriver.common.by import By
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-desktop_path = "C:/Users/wuyib/Desktop/"
+desktop_path = "C:/input your path/Desktop/"
 
 doc_types = ['short quiz', 'notes', 'worksheet','multiple choice questions', 'short questions', 'structural questions', 'fill in the blanks', 'matching questions', 'Essay-type questions']
 
