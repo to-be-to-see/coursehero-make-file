@@ -1,2 +1,2 @@
-python-docx
-selenium
+python-docx 1.1.2
+selenium 4.24.0
